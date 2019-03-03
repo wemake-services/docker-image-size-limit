@@ -1,0 +1,50 @@
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
+
+[tool.poetry]
+name = "docker-image-size-limit"
+version = "0.1.0"
+description = ""
+license = "MIT"
+authors = [
+  "Nikita Sobolev <mail@sobolevn.me>"
+]
+
+readme = "README.md"
+
+repository = "https://github.com/wemake-services/docker-image-size-limit"
+
+keywords = [
+  "docker",
+  "docker image",
+  "size limit",
+  "wemake.services",
+  "code quality"
+]
+
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Environment :: Console",
+  "Intended Audience :: Developers",
+  "Operating System :: OS Independent",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+  "Topic :: Software Development :: Quality Assurance",
+]
+
+[tool.poetry.scripts]
+disl = "docker_image_size_limit:main"
+
+[tool.poetry.dependencies]
+python = "^3.6"
+docker = "^3.7"
+humanfriendly = "^4.18"
+toml = "^0.10.0"
+
+[tool.poetry.dev-dependencies]
+pytest-cov = "^2.6"
+pytest-randomly = "^2.1"
+pytest = "^4.3"
+mypy = "^0.670"
+wemake-python-styleguide = "^0.7.1"
+safety = "^1.8"
