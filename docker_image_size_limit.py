@@ -19,14 +19,15 @@ def main() -> NoReturn:
     arguments = _parse_args()
     oversize = check_image_size(client, arguments.image, arguments.size)
 
-    if oversize:
+    exit_code = 0
+    if oversize > 0:
         print('{0} exceeds {1} limit by {2}'.format(  # noqa: T001
             arguments.image,
             arguments.size,
             format_size(oversize, binary=True),
         ))
-        sys.exit(1)
-    sys.exit(0)
+        exit_code = 1
+    sys.exit(exit_code)
 
 
 def check_image_size(client: DockerClient, image: str, limit: str) -> int:

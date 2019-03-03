@@ -29,7 +29,7 @@ def test_disl_normal(docker_client, image_name):
         [
             'disl',
             image_name,
-            '500MB',
+            '1 GiB',
         ],
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,
