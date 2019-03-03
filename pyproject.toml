@@ -4,7 +4,7 @@ build-backend = "poetry.masonry.api"
 
 [tool.poetry]
 name = "docker-image-size-limit"
-version = "0.1.0"
+version = "0.1.1"
 description = ""
 license = "MIT"
 authors = [
