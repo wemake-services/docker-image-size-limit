@@ -19,7 +19,7 @@ We support just a single command:
 
 ```bash
 $ disl your-image-name:label 300MiB
-your-image-name:label exceeds 300MiB limit by 14.4 MiB
+your-image-name:label exceeds 300MiB limit by 114.4 MiB
 ```
 
 
