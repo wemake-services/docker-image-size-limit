@@ -5,6 +5,7 @@
 Limit your `docker` image size with a simple CLI command.
 Perfect to be used inside your CI process.
 
+Read the [announcing post](https://sobolevn.me/2019/03/announcing-docker-image-size-limit).
 
 ## Installation
 
