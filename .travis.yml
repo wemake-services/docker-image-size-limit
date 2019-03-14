@@ -10,7 +10,7 @@ matrix:
 
 
 before_install:
-  - python3 -m venv --clear "$(which python3 | xargs dirname | xargs dirname)"
+  - pip freeze | xargs pip uninstall -y
   - curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py | python
   - source "$HOME/.poetry/env"
 
