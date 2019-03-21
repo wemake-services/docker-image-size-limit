@@ -744,7 +744,7 @@ description = "The strictest and most opinionated python linter ever"
 name = "wemake-python-styleguide"
 optional = false
 python-versions = ">=3.6,<4.0"
-version = "0.8.0"
+version = "0.8.1"
 
 [package.dependencies]
 astor = ">=0.7.1,<0.8.0"
@@ -771,7 +771,7 @@ pep8-naming = ">=0.7,<0.9"
 typing_extensions = ">=3.6,<4.0"
 
 [metadata]
-content-hash = "8b5302473ab1ac552596c7f9257dfb6aef705dd69ce01180324d76be56f08960"
+content-hash = "a1df561238039a1c81ae0212686b999d2709f87b2403d1e6c474e82b0fede7cd"
 python-versions = "^3.6"
 
 [metadata.hashes]
@@ -846,4 +846,4 @@ typing = ["4027c5f6127a6267a435201981ba156de91ad0d1d98e9ddc2aa173453453492d", "5
 typing-extensions = ["07b2c978670896022a43c4b915df8958bec4a6b84add7f2c87b2b728bda3ba64", "f3f0e67e1d42de47b5c67c32c9b26641642e9170fe7e292991793705cd5fef7c", "fb2cd053238d33a8ec939190f30cfd736c00653a85a2919415cecf7dc3d9da71"]
 urllib3 = ["61bf29cada3fc2fbefad4fdf059ea4bd1b4a86d2b6d15e1c7c0b582b9752fe39", "de9529817c93f27c8ccbfead6985011db27bd0ddfcdb2d86f3f663385c6a9c22"]
 websocket-client = ["47a3ddf3ee7ecd4e2f81610bcdc7f44d5dd03b602b911d4ce991cd82310d3f3b", "f6029deea21218f2c771848935aa26c15699c831770f4fa66958bdaabff80ca0"]
-wemake-python-styleguide = ["2b4350ebb7816795ce360799cc874332fa83080d6f3a1370f81e969b1cbc0566", "c5e645a08301bd8b68657d631c229de147dfb9c7cfcbd2d42bcadc334804c26b"]
+wemake-python-styleguide = ["0509b114f0446a30595e99d25566669c9f1ad9972b9d322ef27a22b8db19ba20", "0a94915dd1c48ca541a78a73b1c7e65cc023c3bd1c5d10b0a3f9dd23f2d4c4e6"]
