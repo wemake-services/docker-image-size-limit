@@ -42,7 +42,7 @@ humanfriendly = "^4.18"
 
 [tool.poetry.dev-dependencies]
 pytest-cov = "^2.6"
-pytest-randomly = "^2.1"
+pytest-randomly = "^3.0"
 pytest-timeout = "^1.3"
 pytest = "^4.4"
 mypy = "^0.700"
