@@ -416,7 +416,6 @@ version = "0.6.1"
 [[package]]
 category = "dev"
 description = "More routines for operating on iterables, beyond itertools"
-marker = "python_version > \"2.7\""
 name = "more-itertools"
 optional = false
 python-versions = ">=3.4"
@@ -554,23 +553,19 @@ category = "dev"
 description = "pytest: simple powerful testing with Python"
 name = "pytest"
 optional = false
-python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
-version = "4.6.3"
+python-versions = ">=3.5"
+version = "5.0.0"
 
 [package.dependencies]
 atomicwrites = ">=1.0"
 attrs = ">=17.4.0"
 colorama = "*"
 importlib-metadata = ">=0.12"
+more-itertools = ">=4.0.0"
 packaging = "*"
 pluggy = ">=0.12,<1.0"
 py = ">=1.5.0"
-six = ">=1.10.0"
 wcwidth = "*"
-
-[package.dependencies.more-itertools]
-python = ">=2.8"
-version = ">=4.0.0"
 
 [[package]]
 category = "dev"
@@ -791,7 +786,7 @@ python-versions = ">=2.7"
 version = "0.5.1"
 
 [metadata]
-content-hash = "b2f6d576c6196b99d59cafd334afe819ca6b9c847547081cc3e7edee41de620c"
+content-hash = "3416dd6b54650f07c45f338b97058cf474c085371ffbb72e7fc69c0b73740404"
 python-versions = "^3.6"
 
 [metadata.hashes]
@@ -848,7 +843,7 @@ pyflakes = ["17dbeb2e3f4d772725c777fabc446d5634d1038f234e77343108ce445ea69ce0", 
 pyparsing = ["66c9268862641abcac4a96ba74506e594c884e3f57690a696d21ad8210ed667a", "f6c5ef0d7480ad048c054c37632c67fca55299990fff127850181659eea33fc3"]
 pypiwin32 = ["67adf399debc1d5d14dffc1ab5acacb800da569754fafdc576b2a039485aa775", "71be40c1fbd28594214ecaecb58e7aa8b708eabfa0125c8a109ebd51edbd776a"]
 pyreadline = ["4530592fc2e85b25b1a9f79664433da09237c1a270e4d78ea5aa3a2c7229e2d1", "65540c21bfe14405a3a77e4c085ecfce88724743a4ead47c66b84defcf82c32e", "9ce5fa65b8992dfa373bddc5b6e0864ead8f291c94fbfec05fbd5c836162e67b"]
-pytest = ["4a784f1d4f2ef198fe9b7aef793e9fa1a3b2f84e822d9b3a64a181293a572d45", "926855726d8ae8371803f7b2e6ec0a69953d9c6311fa7c3b6c1b929ff92d27da"]
+pytest = ["2878de8ae1c79a62c012da6186b88ff0562ea96ce29c4208d2a9b11d9f607df1", "95b700cf21ed5b7e91bce7a6b5a573b2e3ef7b3643d00f681d8f9c4672f9fbdf"]
 pytest-cov = ["2b097cde81a302e1047331b48cadacf23577e431b61e9c6f49a1170bbe3d3da6", "e00ea4fdde970725482f1f35630d12f074e121a23801aabf2ae154ec6bdd343a"]
 pytest-randomly = ["07b642e177c5921386fa36ee3995a4bda918a1d20b3806a4f397a02788f88331", "f5ac7c6e30a32c1aa5ae911e00b5ffd6a0df38eb818f6b539e1e7b89995724ed"]
 pytest-timeout = ["4a30ba76837a32c7b7cd5c84ee9933fde4b9022b0cd20ea7d4a577c2a1649fb1", "d49f618c6448c14168773b6cdda022764c63ea80d42274e3156787e8088d04c6"]
