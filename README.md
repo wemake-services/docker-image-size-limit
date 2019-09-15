@@ -52,7 +52,7 @@ You can also import and use this library as `python` code:
 from docker import from_env
 from docker_image_size_limit import check_image_size
 
-oversize = check_image_size(client, 'image-name:latest', '1 GiB')
+oversize = check_image_size(from_env(), 'image-name:latest', '1 GiB')
 assert oversize < 0, 'Too big image!'  # negative oversize - is a good thing!
 ```
 
