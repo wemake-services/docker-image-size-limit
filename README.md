@@ -7,6 +7,7 @@ Perfect to be used inside your CI process.
 
 Read the [announcing post](https://sobolevn.me/2019/03/announcing-docker-image-size-limit).
 
+
 ## Installation
 
 ```bash
@@ -37,6 +38,22 @@ You can specify your size as:
 - Human-readable megabytes: `30 MB` or `30 MiB`
 - Human-readable gigabytes: `1 GB` or `1 GiB`
 - Any other size supported by [`humanfriendly`](https://humanfriendly.readthedocs.io/en/latest/api.html#humanfriendly.parse_size)
+
+
+## Programmatic usage
+
+You can also import and use this library as `python` code:
+
+```python
+from docker import from_env
+from docker_image_size_limit import check_image_size
+
+oversize = check_image_size(client, 'image-name:latest', '1 GiB')
+assert oversize < 0, 'Too big image!'  # negative oversize - is a good thing!
+```
+
+We also ship [PEP-561](https://www.python.org/dev/peps/pep-0561/)
+compatible type annotations with this library.
 
 
 ## Should I use it?

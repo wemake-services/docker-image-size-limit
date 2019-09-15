@@ -2,9 +2,14 @@
 requires = ["poetry>=0.12"]
 build-backend = "poetry.masonry.api"
 
+
+[tool.nitpick]
+style = "https://raw.githubusercontent.com/wemake-services/wemake-python-styleguide/master/styles/nitpick-style-wemake.toml"
+
+
 [tool.poetry]
 name = "docker-image-size-limit"
-version = "0.1.2"
+version = "0.1.1"
 description = ""
 license = "MIT"
 authors = [
@@ -45,6 +50,9 @@ pytest-cov = "^2.7"
 pytest-randomly = "^3.1"
 pytest-timeout = "^1.3"
 pytest = "^5.1"
+
 mypy = "^0.720"
-wemake-python-styleguide = "^0.10.0"
+wemake-python-styleguide = "^0.12.4"
+nitpick = "^0.21.0"
+
 safety = "^1.8"

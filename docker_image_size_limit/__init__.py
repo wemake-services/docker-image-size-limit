@@ -37,7 +37,9 @@ def check_image_size(client: DockerClient, image: str, limit: str) -> int:
     Compares it to the given size in bytes or in human readable format.
 
     Returns:
-        Tresshold overflow in bytes. Or ``0`` if image is less than limit.
+        Tresshold overflow in bytes.
+        Can be negative in case ``image_limit`` is bigger
+        than the actual image. We only care for values ``> 0``.
 
     """
     image_size = client.images.get(image).attrs['Size']
@@ -47,9 +49,7 @@ def check_image_size(client: DockerClient, image: str, limit: str) -> int:
     except ValueError:
         image_limit = parse_size(limit, binary=True)
 
-    if image_size > image_limit:
-        return image_size - image_limit
-    return 0
+    return image_size - image_limit
 
 
 def _parse_args() -> argparse.Namespace:

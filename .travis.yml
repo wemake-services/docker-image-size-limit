@@ -1,3 +1,4 @@
+dist: xenial
 language: python
 
 matrix:
@@ -5,8 +6,6 @@ matrix:
   include:
     - python: 3.6
     - python: 3.7
-      dist: xenial
-      sudo: true
 
 
 before_install:
@@ -18,8 +17,8 @@ install:
   - poetry install
 
 script:
-  - poetry run flake8 docker_image_size_limit.py tests
-  - poetry run mypy docker_image_size_limit.py
+  - poetry run flake8 .
+  - poetry run mypy docker_image_size_limit
   - poetry run pytest
   - poetry check
   - poetry run pip check
