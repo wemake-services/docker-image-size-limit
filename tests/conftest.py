@@ -17,6 +17,6 @@ def image_name():
 
 
 @pytest.fixture(scope='session', autouse=True)
-def docker_pull_image(docker_client, image_name):
+def docker_pull_image(docker_client, image_name):  # noqa: WPS442
     """Pulls docker image from Docker Hub."""
     return docker_client.images.pull(image_name)

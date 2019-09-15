@@ -7,6 +7,7 @@ We follow Semantic Version.
 
 ### Features
 
+- Now real negative size is returned when limit is bigger than image
 - Adds `py.typed` file to package the type annotation with the code
 
 ### Misc

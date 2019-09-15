@@ -10,8 +10,7 @@ def test_main_overflow(docker_client, image_name, monkeypatch):
     monkeypatch.setattr(sys, 'argv', ['', image_name, '1 MB'])
     with pytest.raises(SystemExit) as exit_value:
         main()
-
-    assert exit_value.value.code == 1
+        assert exit_value.value.code == 1
 
 
 def test_main_correct(docker_client, image_name, monkeypatch):
@@ -19,5 +18,4 @@ def test_main_correct(docker_client, image_name, monkeypatch):
     monkeypatch.setattr(sys, 'argv', ['', image_name, '1 GB'])
     with pytest.raises(SystemExit) as exit_value:
         main()
-
-    assert exit_value.value.code == 0
+        assert exit_value.value.code == 0
