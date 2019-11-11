@@ -4,7 +4,7 @@
 [![Build Status](https://travis-ci.org/wemake-services/docker-image-size-limit.svg?branch=master)](https://travis-ci.org/wemake-services/docker-image-size-limit)
 [![Coverage](https://coveralls.io/repos/github/wemake-services/docker-image-size-limit/badge.svg?branch=master)](https://coveralls.io/github/wemake-services/docker-image-size-limit?branch=master)
 [![Python Version](https://img.shields.io/pypi/pyversions/docker-image-size-limit.svg)](https://pypi.org/project/docker-image-size-limit/)
-[![wemake-python-styleguide](https://img.shields.io/badge/style-wemake-000000.svg)](https://github.com/wemake-services/docker-image-size-limit)
+[![wemake-python-styleguide](https://img.shields.io/badge/style-wemake-000000.svg)](https://github.com/wemake-services/wemake-python-styleguide)
 
 Limit your `docker` image size with a simple CLI command.
 Perfect to be used inside your CI process.
