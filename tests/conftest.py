@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 
+import docker
 import pytest
-from docker import from_env
 
 
 @pytest.fixture(scope='session')
 def docker_client():
     """Creates docker client suitable for tests."""
-    return from_env()
+    return docker.from_env()
 
 
 @pytest.fixture(scope='session')

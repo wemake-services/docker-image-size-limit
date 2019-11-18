@@ -4,8 +4,8 @@ import argparse
 import sys
 from typing import NoReturn
 
+import docker
 import pkg_resources
-from docker import DockerClient, from_env
 from humanfriendly import format_size, parse_size
 
 _version = pkg_resources.get_distribution(
@@ -15,7 +15,7 @@ _version = pkg_resources.get_distribution(
 
 def main() -> NoReturn:
     """Main CLI entrypoint."""
-    client = from_env()
+    client = docker.from_env()
     arguments = _parse_args()
     oversize = check_image_size(client, arguments.image, arguments.size)
 
@@ -30,11 +30,20 @@ def main() -> NoReturn:
     sys.exit(exit_code)
 
 
-def check_image_size(client: DockerClient, image: str, limit: str) -> int:
+def check_image_size(
+    client: docker.DockerClient,
+    image: str,
+    limit: str,
+) -> int:
     """
     Checks the image size of given image name.
 
     Compares it to the given size in bytes or in human readable format.
+
+    Args:
+        client: docker client to work with images.
+        image: image name.
+        limit: human-readable size limit.
 
     Returns:
         Tresshold overflow in bytes.
