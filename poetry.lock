@@ -473,7 +473,7 @@ description = "Human friendly output for text interfaces using Python"
 name = "humanfriendly"
 optional = false
 python-versions = "*"
-version = "4.18"
+version = "5.0"
 
 [package.dependencies]
 pyreadline = "*"
@@ -1046,7 +1046,7 @@ version = "0.6.0"
 more-itertools = "*"
 
 [metadata]
-content-hash = "0b459b0197313378e686c02f16ae39b0fc7a08075969e00d9e992df3d70310e5"
+content-hash = "af1e5120014f991da5da68d783c1bb864d453f9aa599c7ebe1f2734b11f379ff"
 python-versions = "^3.6"
 
 [metadata.hashes]
@@ -1094,7 +1094,7 @@ flake8-string-format = ["68ea72a1a5b75e7018cae44d14f32473c798cf73d75cbaed86c6a9a
 future = ["b1bead90b70cf6ec3f0710ae53a525360fa360d306a86583adc6bf83a4db537d"]
 gitdb2 = ["1b6df1433567a51a4a9c1a5a0de977aa351a405cc56d7d35f3388bad1f630350", "96bbb507d765a7f51eb802554a9cfe194a174582f772e0d89f4e87288c288b7b"]
 gitpython = ["9c2398ffc3dcb3c40b27324b316f08a4f93ad646d5a6328cafbb871aa79f5e42", "c155c6a2653593ccb300462f6ef533583a913e17857cfef8fc617c246b6dc245"]
-humanfriendly = ["23057b10ad6f782e7bc3a20e3cb6768ab919f619bbdc0dd75691121bbde5591d", "33ee8ceb63f1db61cce8b5c800c531e1a61023ac5488ccde2ba574a85be00a85"]
+humanfriendly = ["b166d90b0fd2e7deafc5d20f64ddfdd4251189a1a6bdc5ed32c6678c79b546d5", "eee2e57dea6185fee19914c7d8ba8bc3e488aee2a3c96a7668ce355e2ae275ae"]
 idna = ["c357b3f628cf53ae2c4c05627ecc484553142ca23264e593d327bcde5e9c3407", "ea8b7f6188e6fa117537c3df7da9fc686d485087abf6ac197f9c46432f7e4a3c"]
 importlib-metadata = ["aa18d7378b00b40847790e7c27e11673d7fed219354109d0e7b9e5b25dc3ad26", "d5f18a79777f3aa179c145737780282e27b508fc8fd688cb17c7a813e8bd39af"]
 isort = ["54da7e92468955c4fceacd0c86bd0ec997b0e1ee80d97f67c35a78b719dccab1", "6e811fcb295968434526407adb8796944f1988c5b65e8139058f2014cbe100fd"]
