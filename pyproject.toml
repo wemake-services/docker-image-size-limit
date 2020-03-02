@@ -43,7 +43,7 @@ disl = "docker_image_size_limit:main"
 [tool.poetry.dependencies]
 python = "^3.6"
 docker = ">=3.7,<5.0"
-humanfriendly = ">=4.18,<8.0"
+humanfriendly = ">=4.18,<9.0"
 
 [tool.poetry.dev-dependencies]
 pytest-cov = "^2.8"
