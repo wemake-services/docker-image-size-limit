@@ -18,6 +18,8 @@ install:
 script:
   - poetry run flake8 .
   - poetry run mypy docker_image_size_limit
+  # We need this image for tests:
+  - poetry run docker pull python:3.6.6-alpine
   - poetry run pytest
   - poetry check
   - poetry run pip check

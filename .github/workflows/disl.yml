@@ -13,11 +13,11 @@ jobs:
     steps:
     - uses: actions/checkout@v1
 
-    - name: 'Build dockerfile'
+    - name: 'Build named dockerfile'
       run: |
         docker build . --tag wemake-services/docker-image-size-limit:latest
 
     - uses: wemake-services/docker-image-size-limit@master
-      with:
+      with:  # we lint this image by itself:
         image: 'wemake-services/docker-image-size-limit:latest'
         size: 405MB
