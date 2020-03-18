@@ -18,6 +18,8 @@ Read the [announcing post](https://sobolevn.me/2019/03/announcing-docker-image-s
 pip install docker-image-size-limit
 ```
 
+Or use our [Github Action](https://github.com/wemake-services/docker-image-size-limit#github-action) or [pre-built docker image](https://github.com/wemake-services/docker-image-size-limit#docker-image).
+
 
 ## Usage
 
@@ -65,18 +67,23 @@ compatible type annotations with this library.
 You can also use this check as a [Gihub Action](https://github.com/marketplace/actions/docker-image-size-limit):
 
 ```yaml
-
+- uses: wemake-services/docker-image-size-limit@master
+  with:
+    image: "$YOUR_IMAGE_NAME"
+    size: "$YOUR_SIZE_LIMIT"
 ```
+
+Here's [an example](https://github.com/wemake-services/docker-image-size-limit/actions?query=workflow%3Adisl).
 
 
 ## Docker Image
 
-We have a pre-built image available.
+We have a [pre-built image](https://hub.docker.com/r/wemakeservices/docker-image-size-limit) available.
 
 First, pull our pre-built docker image:
 
 ```bash
-docker pull wemake-services/docker-image-size-limit
+docker pull wemakeservices/docker-image-size-limit
 ```
 
 Then you can use it like so:
@@ -85,7 +92,7 @@ Then you can use it like so:
 docker run -v /var/run/docker.sock:/var/run/docker.sock --rm \
   -e INPUT_IMAGE="$YOUR_IMAGE_NAME" \
   -e INPUT_SIZE="$YOUR_SIZE_LIMIT" \
-  wemake-services/docker-image-size-limit
+  wemakeservices/docker-image-size-limit
 ```
 
 
