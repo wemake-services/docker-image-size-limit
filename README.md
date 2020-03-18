@@ -60,16 +60,45 @@ We also ship [PEP-561](https://www.python.org/dev/peps/pep-0561/)
 compatible type annotations with this library.
 
 
+## Github Action
+
+You can also use this check as a [Gihub Action](https://github.com/marketplace/actions/docker-image-size-limit):
+
+```yaml
+
+```
+
+
+## Docker Image
+
+We have a pre-built image available.
+
+First, pull our pre-built docker image:
+
+```bash
+docker pull wemake-services/docker-image-size-limit
+```
+
+Then you can use it like so:
+
+```bash
+docker run -v /var/run/docker.sock:/var/run/docker.sock --rm \
+  -e INPUT_IMAGE="$YOUR_IMAGE_NAME" \
+  -e INPUT_SIZE="$YOUR_SIZE_LIMIT" \
+  wemake-services/docker-image-size-limit
+```
+
+
 ## Should I use it?
 
 You can use this script instead:
 
 ```bash
-LIMIT=1024
+LIMIT=1024  # adjust at your will
 IMAGE='your-image-name:latest'
 
 SIZE="$(docker image inspect "$IMAGE" --format='{{.Size}}')"
-test "$SIZE" -gt "$LIMIT" && echo 'Limit exceeded'; false
+test "$SIZE" -gt "$LIMIT" && echo 'Limit exceeded'; exit 1 || echo 'Ok!'
 ```
 
 But I prefer to reuse tools over

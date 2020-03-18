@@ -1,0 +1,29 @@
+# This is a definition file for a Github Action.
+# See: https://help.github.com/en/articles/creating-a-docker-container-action
+
+# We also define metadata here:
+# See: https://help.github.com/en/articles/metadata-syntax-for-github-actions
+
+name: 'docker-image-size-limit'
+description: 'Runs docker-image-size-limit as a Github Action'
+branding:
+  icon: 'check'
+  color: 'blue'
+
+inputs:
+  image:
+    description: 'Image name to be checked'
+    required: true
+  size:
+    description: 'Human readable size as the hard limit'
+    required: true
+outputs:
+  size:
+    description: 'The output of docker-image-size-limit run'
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.image }}
+    - ${{ inputs.size }}

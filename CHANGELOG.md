@@ -3,6 +3,20 @@
 We follow Semantic Version.
 
 
+## Version 0.3.0
+
+### Features
+
+- Adds Github Action support
+- Adds `python3.8` support
+- Adds `Dockerfile` and dockerhub integration
+
+### Misc
+
+- Updates `poetry` version
+- Updates lots of dependencies
+
+
 ## Version 0.2.0
 
 ### Features

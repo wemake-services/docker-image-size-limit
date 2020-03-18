@@ -1,16 +1,22 @@
 # -*- coding: utf-8 -*-
 
 import argparse
+import os
 import sys
 from typing import NoReturn
 
 import docker
-import pkg_resources
 from humanfriendly import format_size, parse_size
 
-_version = pkg_resources.get_distribution(
-    'docker_image_size_limit',
-).version
+try:  # pragma: no cover
+    from importlib import metadata as importlib_metadata  # noqa: WPS433
+except ImportError:  # pragma: no cover
+    import importlib_metadata  # noqa: WPS433, WPS440
+
+#: We use this variable to show version spec.
+_version = importlib_metadata.version(
+    os.path.basename(os.path.dirname(__file__)),
+)
 
 
 def main() -> NoReturn:
