@@ -8,13 +8,13 @@ from typing import NoReturn
 import docker
 from humanfriendly import format_size, parse_size
 
-try:  # pragma: no cover
+if sys.version_info >= (3, 8):  # pragma: no cover
     from importlib import metadata as importlib_metadata  # noqa: WPS433
-except ImportError:  # pragma: no cover
-    import importlib_metadata  # type: ignore # noqa: WPS433, WPS440
+else:  # pragma: no cover
+    import importlib_metadata  # noqa: WPS433, WPS440
 
 #: We use this variable to show version spec.
-_version = importlib_metadata.version(  # type: ignore
+_version = importlib_metadata.version(
     os.path.basename(os.path.dirname(__file__)),
 )
 
