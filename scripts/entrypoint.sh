@@ -18,7 +18,7 @@ echo "::set-output name=output::$output"
 echo '================================='
 echo
 
-# # Fail the build in case status code is not 0:
+# Fail the build in case status code is not 0:
 if [ "$status" != 0 ]; then
   echo 'Failing with output:'
   echo "$output"

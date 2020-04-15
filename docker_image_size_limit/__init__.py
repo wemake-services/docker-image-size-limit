@@ -27,7 +27,7 @@ def main() -> NoReturn:
 
     exit_code = 0
     if oversize > 0:
-        print('{0} exceeds {1} limit by {2}'.format(  # noqa: T001
+        print('{0} exceeds {1} limit by {2}'.format(  # noqa: WPS421
             arguments.image,
             arguments.size,
             format_size(oversize, binary=True),
