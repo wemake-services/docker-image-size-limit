@@ -720,7 +720,7 @@ description = "py.test plugin to abort hanging tests"
 name = "pytest-timeout"
 optional = false
 python-versions = "*"
-version = "1.3.4"
+version = "1.4.0"
 
 [package.dependencies]
 pytest = ">=3.6.0"
@@ -994,7 +994,7 @@ docs = ["sphinx", "jaraco.packaging (>=3.2)", "rst.linker (>=1.9)"]
 testing = ["jaraco.itertools", "func-timeout"]
 
 [metadata]
-content-hash = "623817b086314c90d4d8f049b8aae2101881fa69faa2d97fbc892e78d9210343"
+content-hash = "c331bb2204672024d6caab78136771713464fa1428957000ebc06093698887d9"
 python-versions = "^3.6"
 
 [metadata.files]
@@ -1279,8 +1279,8 @@ pytest-randomly = [
     {file = "pytest_randomly-3.4.0-py3-none-any.whl", hash = "sha256:4e02887ba52f021cc8d5429e91e93be2b5df4adf38bf1715c7c153968b260b59"},
 ]
 pytest-timeout = [
-    {file = "pytest-timeout-1.3.4.tar.gz", hash = "sha256:80faa19cd245a42b87a51699d640c00d937c02b749052bfca6bae8bdbe12c48e"},
-    {file = "pytest_timeout-1.3.4-py2.py3-none-any.whl", hash = "sha256:95ca727d4a1dace6ec5f0534d2940b8417ff8b782f7eef0ea09240bdd94d95c2"},
+    {file = "pytest-timeout-1.4.0.tar.gz", hash = "sha256:d46426af764f108ca1bd18ca092307e1356c17f74388c396fd5447c2231318e6"},
+    {file = "pytest_timeout-1.4.0-py2.py3-none-any.whl", hash = "sha256:93753a127a7435684c70569c7c8de380b135b70be712de94734001a3225ab0ea"},
 ]
 python-slugify = [
     {file = "python-slugify-4.0.0.tar.gz", hash = "sha256:a8fc3433821140e8f409a9831d13ae5deccd0b033d4744d94b31fea141bdd84c"},
