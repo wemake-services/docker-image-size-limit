@@ -720,7 +720,7 @@ description = "py.test plugin to abort hanging tests"
 name = "pytest-timeout"
 optional = false
 python-versions = "*"
-version = "1.4.1"
+version = "1.4.2"
 
 [package.dependencies]
 pytest = ">=3.6.0"
@@ -1279,8 +1279,8 @@ pytest-randomly = [
     {file = "pytest_randomly-3.4.1-py3-none-any.whl", hash = "sha256:2c4df1390db72a33a4f44fac0c780e7883cd5968238efa2a2bdbdd54e3fc6681"},
 ]
 pytest-timeout = [
-    {file = "pytest-timeout-1.4.1.tar.gz", hash = "sha256:6d0fb4ce74cebb81be252e4e0d9c2a91f30270b33208cfa0f1da6eed9abf18ac"},
-    {file = "pytest_timeout-1.4.1-py2.py3-none-any.whl", hash = "sha256:c10650550e0c4fef5b06274411377c8b54c7b370c34b632fd4ce1a9b170f5ba3"},
+    {file = "pytest-timeout-1.4.2.tar.gz", hash = "sha256:20b3113cf6e4e80ce2d403b6fb56e9e1b871b510259206d40ff8d609f48bda76"},
+    {file = "pytest_timeout-1.4.2-py2.py3-none-any.whl", hash = "sha256:541d7aa19b9a6b4e475c759fd6073ef43d7cdc9a92d95644c260076eb257a063"},
 ]
 python-slugify = [
     {file = "python-slugify-4.0.0.tar.gz", hash = "sha256:a8fc3433821140e8f409a9831d13ae5deccd0b033d4744d94b31fea141bdd84c"},
