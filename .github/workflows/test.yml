@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [3.6, 3.7, 3.8]
+        python-version: [3.6, 3.7, 3.8, 3.9]
 
     steps:
     - uses: actions/checkout@v2
@@ -21,6 +21,9 @@ jobs:
         curl -sSL \
           "https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py" | python
 
+        # Adding `poetry` to `$PATH`:
+        echo "$HOME/.poetry/bin" >> $GITHUB_PATH
+
     - name: Set up cache
       uses: actions/cache@v1
       with:
@@ -28,14 +31,11 @@ jobs:
         key: venv-${{ matrix.python-version }}-${{ hashFiles('poetry.lock') }}
     - name: Install dependencies
       run: |
-        source "$HOME/.poetry/env"
         poetry config virtualenvs.in-project true
         poetry install
 
     - name: "Run checks for python ${{ matrix.python-version }}"
       run: |
-        source "$HOME/.poetry/env"
-
         poetry run flake8 .
         poetry run mypy docker_image_size_limit
         # We need this image for tests:
@@ -45,7 +45,7 @@ jobs:
         poetry run pip check
         poetry run safety check --bare --full-report
 
-    - name: Upload coverage to Codecov  
+    - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v1
       with:
         file: ./coverage.xml
