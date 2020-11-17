@@ -3,6 +3,17 @@
 We follow Semantic Version.
 
 
+## Version 0.4.0
+
+### Features
+
+- Adds `python3.9` support
+
+## Misc
+
+- Updates a lot of dev dependencies
+
+
 ## Version 0.3.0
 
 ### Features
