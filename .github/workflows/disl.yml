@@ -15,7 +15,7 @@ jobs:
 
     - name: 'Build named dockerfile'
       run: |
-        echo "action: $GITHUB_ACTION"
+        env
         docker build . --tag wemake-services/docker-image-size-limit:latest
 
     - uses: wemake-services/docker-image-size-limit@master
