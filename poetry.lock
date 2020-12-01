@@ -373,7 +373,7 @@ gitdb = ">=4.0.1,<5"
 
 [[package]]
 name = "humanfriendly"
-version = "8.2"
+version = "9.0"
 description = "Human friendly output for text interfaces using Python"
 category = "main"
 optional = false
@@ -963,7 +963,7 @@ testing = ["pytest (>=3.5,!=3.7.3)", "pytest-checkdocs (>=1.2.3)", "pytest-flake
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.6"
-content-hash = "18ba309127a1bf82eb9b7b9c74ba958c011c387947cea04e16c68995d1e2ab8a"
+content-hash = "5ebe9b2d413e3261a017fc09950ff15175f8a0769cf1ae1c4e2ae761c748e7f5"
 
 [metadata.files]
 astor = [
@@ -1126,8 +1126,8 @@ gitpython = [
     {file = "GitPython-3.1.11.tar.gz", hash = "sha256:befa4d101f91bad1b632df4308ec64555db684c360bd7d2130b4807d49ce86b8"},
 ]
 humanfriendly = [
-    {file = "humanfriendly-8.2-py2.py3-none-any.whl", hash = "sha256:e78960b31198511f45fd455534ae7645a6207d33e512d2e842c766d15d9c8080"},
-    {file = "humanfriendly-8.2.tar.gz", hash = "sha256:bf52ec91244819c780341a3438d5d7b09f431d3f113a475147ac9b7b167a3d12"},
+    {file = "humanfriendly-9.0-py2.py3-none-any.whl", hash = "sha256:3c9ab8d28e88e6cc998e41963357736dafd555ee5bb666b50e42f6ce28dd3e3d"},
+    {file = "humanfriendly-9.0.tar.gz", hash = "sha256:175ffa628aa76da2c17369a5da5856084562cc66dfe7f82ae93ca3ef175277a6"},
 ]
 identify = [
     {file = "identify-1.5.9-py2.py3-none-any.whl", hash = "sha256:5dd84ac64a9a115b8e0b27d1756b244b882ad264c3c423f42af8235a6e71ca12"},
