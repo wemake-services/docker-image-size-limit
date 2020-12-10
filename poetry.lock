@@ -373,7 +373,7 @@ gitdb = ">=4.0.1,<5"
 
 [[package]]
 name = "humanfriendly"
-version = "9.0"
+version = "9.1"
 description = "Human friendly output for text interfaces using Python"
 category = "main"
 optional = false
@@ -1126,8 +1126,8 @@ gitpython = [
     {file = "GitPython-3.1.11.tar.gz", hash = "sha256:befa4d101f91bad1b632df4308ec64555db684c360bd7d2130b4807d49ce86b8"},
 ]
 humanfriendly = [
-    {file = "humanfriendly-9.0-py2.py3-none-any.whl", hash = "sha256:3c9ab8d28e88e6cc998e41963357736dafd555ee5bb666b50e42f6ce28dd3e3d"},
-    {file = "humanfriendly-9.0.tar.gz", hash = "sha256:175ffa628aa76da2c17369a5da5856084562cc66dfe7f82ae93ca3ef175277a6"},
+    {file = "humanfriendly-9.1-py2.py3-none-any.whl", hash = "sha256:d5c731705114b9ad673754f3317d9fa4c23212f36b29bdc4272a892eafc9bc72"},
+    {file = "humanfriendly-9.1.tar.gz", hash = "sha256:066562956639ab21ff2676d1fda0b5987e985c534fc76700a19bd54bcb81121d"},
 ]
 identify = [
     {file = "identify-1.5.9-py2.py3-none-any.whl", hash = "sha256:5dd84ac64a9a115b8e0b27d1756b244b882ad264c3c423f42af8235a6e71ca12"},
