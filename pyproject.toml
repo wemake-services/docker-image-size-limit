@@ -47,7 +47,7 @@ humanfriendly = ">=4.18,<10.0"
 importlib-metadata = { version = "*", python = "<3.8" }
 
 [tool.poetry.dev-dependencies]
-pytest-cov = "^2.10"
+pytest-cov = "^2.11"
 pytest-randomly = "^3.5"
 pytest-timeout = "^1.4"
 pytest = "^6.2"
