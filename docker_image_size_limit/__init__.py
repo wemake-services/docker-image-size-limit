@@ -7,12 +7,14 @@ import docker
 from humanfriendly import format_size, parse_size
 
 if sys.version_info >= (3, 8):  # pragma: no cover
-    from importlib import metadata as importlib_metadata  # noqa: WPS433
+    from importlib import metadata  # noqa: WPS433
+    lib_version = metadata.version
 else:  # pragma: no cover
-    import importlib_metadata  # noqa: WPS433, WPS440
+    import importlib_metadata  # noqa: WPS433
+    lib_version = importlib_metadata.version
 
 #: We use this variable to show version spec.
-_version = importlib_metadata.version(  # type: ignore
+_version: str = lib_version(
     os.path.basename(os.path.dirname(__file__)),
 )
 
