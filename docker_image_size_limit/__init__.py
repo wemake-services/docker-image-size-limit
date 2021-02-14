@@ -11,10 +11,12 @@ if sys.version_info >= (3, 8):  # pragma: no cover
     lib_version = metadata.version
 else:  # pragma: no cover
     import importlib_metadata  # noqa: WPS433
-    lib_version = importlib_metadata.version
+
+    def lib_version(package: str) -> str:
+        return importlib_metadata.version(package)  # type: ignore
 
 #: We use this variable to show version spec.
-_version: str = lib_version(
+_version = lib_version(
     os.path.basename(os.path.dirname(__file__)),
 )
 
