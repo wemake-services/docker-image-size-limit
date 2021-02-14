@@ -12,7 +12,8 @@ if sys.version_info >= (3, 8):  # pragma: no cover
 else:  # pragma: no cover
     import importlib_metadata  # noqa: WPS433
 
-    def lib_version(package: str) -> str:
+    def lib_version(package: str) -> str:  # noqa: WPS440
+        """Stub function to get the project's version."""
         return importlib_metadata.version(package)  # type: ignore
 
 #: We use this variable to show version spec.
