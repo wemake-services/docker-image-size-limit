@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 import docker
 import pytest
 

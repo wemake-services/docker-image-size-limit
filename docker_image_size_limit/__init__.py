@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 import argparse
 import os
 import sys
@@ -14,7 +12,7 @@ else:  # pragma: no cover
     import importlib_metadata  # noqa: WPS433, WPS440
 
 #: We use this variable to show version spec.
-_version = importlib_metadata.version(
+_version = importlib_metadata.version(  # type: ignore
     os.path.basename(os.path.dirname(__file__)),
 )
 

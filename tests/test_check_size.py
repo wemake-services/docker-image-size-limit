@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 from docker_image_size_limit import check_image_size
 
 
