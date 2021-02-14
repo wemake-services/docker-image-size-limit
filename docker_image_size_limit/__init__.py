@@ -8,6 +8,7 @@ from humanfriendly import format_size, parse_size
 
 if sys.version_info >= (3, 8):  # pragma: no cover
     from importlib import metadata  # noqa: WPS433
+
     lib_version = metadata.version
 else:  # pragma: no cover
     import importlib_metadata  # noqa: WPS433
