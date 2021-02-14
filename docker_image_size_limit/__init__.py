@@ -1,7 +1,7 @@
 import argparse
 import os
 import sys
-from typing import NoReturn, TYPE_CHECKING
+from typing import TYPE_CHECKING, NoReturn
 
 import docker
 from humanfriendly import format_size, parse_size
@@ -9,7 +9,7 @@ from humanfriendly import format_size, parse_size
 if sys.version_info >= (3, 8) or TYPE_CHECKING:  # pragma: no cover
     from importlib import metadata  # noqa: WPS433
 
-    lib_version = getattr(metadata, 'version')
+    lib_version = getattr(metadata, 'version')  # noqa: B009
 else:  # pragma: no cover
     import importlib_metadata  # noqa: WPS433
 
