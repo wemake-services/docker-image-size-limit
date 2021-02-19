@@ -110,7 +110,7 @@ tests = ["check-manifest (>=0.25)", "coverage (>=4.0)", "isort (>=4.2.2)", "mock
 
 [[package]]
 name = "docker"
-version = "4.4.2"
+version = "4.4.3"
 description = "A Python library for the Docker Engine API."
 category = "main"
 optional = false
@@ -1057,8 +1057,8 @@ dictdiffer = [
     {file = "dictdiffer-0.8.1.tar.gz", hash = "sha256:1adec0d67cdf6166bda96ae2934ddb5e54433998ceab63c984574d187cc563d2"},
 ]
 docker = [
-    {file = "docker-4.4.2-py2.py3-none-any.whl", hash = "sha256:20d71afc593486f2297bb7fb7406b03876f31894337e914a5062050c65085cab"},
-    {file = "docker-4.4.2.tar.gz", hash = "sha256:67f33d4cf95182db631a17eef7d666d2c91f624c1d3fbc4df6009cb2f2a4c604"},
+    {file = "docker-4.4.3-py2.py3-none-any.whl", hash = "sha256:d4625e70e3d5a12d7cbf1fd68cef2e081ac86b83889e00e5466d975f90e50dad"},
+    {file = "docker-4.4.3.tar.gz", hash = "sha256:de5753b7f6486dd541a98393e423e387579b8974a5068748b83f852cc76a89d6"},
 ]
 docutils = [
     {file = "docutils-0.16-py2.py3-none-any.whl", hash = "sha256:0c5b78adfbf7762415433f5515cd5c9e762339e23369dbe8000d84a4bf4ab3af"},
