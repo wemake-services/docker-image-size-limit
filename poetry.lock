@@ -593,7 +593,7 @@ python-versions = "*"
 
 [[package]]
 name = "nitpick"
-version = "0.24.0"
+version = "0.24.1"
 description = "Enforce the same configuration across multiple projects"
 category = "dev"
 optional = false
@@ -623,7 +623,7 @@ tomlkit = "*"
 
 [package.extras]
 lint = ["pylint"]
-test = ["pytest", "responses", "testfixtures"]
+test = ["pytest-cov", "pytest", "responses", "testfixtures"]
 doc = ["sphinx", "sphinx-rtd-theme"]
 
 [[package]]
@@ -1370,8 +1370,8 @@ mypy-extensions = [
     {file = "mypy_extensions-0.4.3.tar.gz", hash = "sha256:2d82818f5bb3e369420cb3c4060a7970edba416647068eb4c5343488a6c604a8"},
 ]
 nitpick = [
-    {file = "nitpick-0.24.0-py3-none-any.whl", hash = "sha256:182c3f444010378cdc7a9216fa91fd44eab445460844a6b2f2adb618dc8f4e3f"},
-    {file = "nitpick-0.24.0.tar.gz", hash = "sha256:ae8c7baea137b6503e5e8b02459b9188fbddeea01cfca8e91d4ca920ae294a70"},
+    {file = "nitpick-0.24.1-py3-none-any.whl", hash = "sha256:34d28031ccd2ad3e975d42c06d9a69dd906ecf9d6cba89454f9ae32715791551"},
+    {file = "nitpick-0.24.1.tar.gz", hash = "sha256:b89c0d5a589161ebc346d38adfbcece42f844d2d5fd836930844b0e84031e4cb"},
 ]
 packaging = [
     {file = "packaging-20.9-py2.py3-none-any.whl", hash = "sha256:67714da7f7bc052e064859c05c595155bd1ee9f69f76557e21f051443c20947a"},
