@@ -1,0 +1,31 @@
+version: 2
+updates:
+- package-ecosystem: pip
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "02:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: wemake-python-styleguide
+    versions:
+    - 0.15.0
+  - dependency-name: importlib-metadata
+    versions:
+    - 3.4.0
+- package-ecosystem: github-actions
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "02:00"
+  open-pull-requests-limit: 10
+- package-ecosystem: docker
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "02:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: python
+    versions:
+    - 3.9.2.pre.alpine
