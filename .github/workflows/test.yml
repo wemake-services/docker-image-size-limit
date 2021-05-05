@@ -1,6 +1,6 @@
 name: test
 
-on: [push, pull_request]
+on: [push, pull_request, workflow_dispatch]
 
 jobs:
   build:
@@ -33,6 +33,8 @@ jobs:
       run: |
         poetry config virtualenvs.in-project true
         poetry install
+
+        poetry run pip install -U pip
 
     - name: "Run checks for python ${{ matrix.python-version }}"
       run: |
