@@ -12,7 +12,7 @@
 # This image is also available on Dockerhub:
 # https://hub.docker.com/r/wemakeservices/docker-image-size-limit
 
-FROM python:3.9.5-alpine
+FROM python:3.10.0b3-alpine
 
 LABEL maintainer="sobolevn@wemake.services"
 LABEL vendor="wemake.services"
