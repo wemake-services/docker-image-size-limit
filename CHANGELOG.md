@@ -3,6 +3,13 @@
 We follow Semantic Version.
 
 
+## Version 0.4.1
+
+## Misc
+
+- Updates a lot of dependencies
+
+
 ## Version 0.4.0
 
 ### Features
