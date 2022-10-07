@@ -1,22 +1,15 @@
 import argparse
 import os
 import sys
-from typing import TYPE_CHECKING, NoReturn
+from typing import NoReturn
 
 import docker
 from humanfriendly import format_size, parse_size
 
-if sys.version_info >= (3, 8) or TYPE_CHECKING:  # pragma: no cover
-    from importlib import metadata  # noqa: WPS433
-
-    lib_version = getattr(metadata, 'version')  # noqa: B009
-else:  # pragma: no cover
-    import importlib_metadata  # noqa: WPS433
-
-    lib_version = importlib_metadata.version
+from docker_image_size_limit.version import get_version
 
 #: We use this variable to show version spec.
-_version = lib_version(
+_version = get_version(
     os.path.basename(os.path.dirname(__file__)),
 )
 
