@@ -3,6 +3,14 @@
 We follow Semantic Version.
 
 
+## Version 0.5.0
+
+### Features
+
+- Drops `python3.6` support
+- Adds `python3.10` support
+
+
 ## Version 0.4.1
 
 ## Misc
