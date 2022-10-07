@@ -1,10 +1,8 @@
 import sys
 
-# Note that we use ``sys.version_info`` directly,
-# because that's how ``mypy`` knows about what we are doing.
-if sys.version_info >= (3, 8):  # pragma: py-lt-38
+if sys.version_info >= (3, 8):  # pragma: no cover
     from importlib import metadata as importlib_metadata  # noqa: WPS433
-else:  # pragma: py-gte-38
+else:  # pragma: no cover
     import importlib_metadata  # noqa: WPS440, WPS433
 
 
