@@ -46,7 +46,7 @@ pytest-randomly = "^3.10"
 pytest-timeout = "^1.4"
 pytest = "^7.0"
 
-mypy = "^0.982"
+mypy = ">=0.982,<1.2"
 wemake-python-styleguide = "^0.17"
 flake8-pytest-style = "^1.5"
 nitpick = "^0.29"
