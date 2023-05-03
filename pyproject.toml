@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "docker-image-size-limit"
-version = "0.5.0"
+version = "1.0.0"
 description = ""
 license = "MIT"
 authors = [
@@ -20,7 +20,7 @@ keywords = [
 ]
 
 classifiers = [
-  "Development Status :: 4 - Beta",
+  "Development Status :: 5 - Stable",
   "Environment :: Console",
   "Intended Audience :: Developers",
   "Operating System :: OS Independent",
@@ -35,27 +35,27 @@ classifiers = [
 disl = "docker_image_size_limit:main"
 
 [tool.poetry.dependencies]
-python = "^3.7"
+python = "^3.8"
+
 docker = ">=3.7,<7.0"
 humanfriendly = ">=4.18,<11.0"
-importlib-metadata = { version = "*", python = "<3.8" }
 
 [tool.poetry.group.test.dependencies]
-pytest-cov = "^3.0"
-pytest-randomly = "^3.10"
+pytest-cov = "^4.0"
+pytest-randomly = "^3.12"
 pytest-timeout = "^1.4"
-pytest = "^7.0"
+pytest = "^7.3"
 
-mypy = "^0.982"
+mypy = "^1.2"
 wemake-python-styleguide = "^0.17"
-flake8-pytest-style = "^1.5"
-nitpick = "^0.29"
+flake8-pytest-style = "^1.6"
+nitpick = "^0.33"
 
-safety = "^2.2"
+safety = "^2.3"
 
 
 [build-system]
-requires = ["poetry-core>=1.2.0"]
+requires = ["poetry-core>=1.5.0"]
 build-backend = "poetry.core.masonry.api"
 
 
