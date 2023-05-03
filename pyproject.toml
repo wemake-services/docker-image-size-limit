@@ -20,7 +20,7 @@ keywords = [
 ]
 
 classifiers = [
-  "Development Status :: 5 - Stable",
+  "Development Status :: 5 - Production/Stable",
   "Environment :: Console",
   "Intended Audience :: Developers",
   "Operating System :: OS Independent",
