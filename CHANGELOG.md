@@ -2,6 +2,12 @@
 
 We follow Semantic Version.
 
+## Version 1.0.1
+
+### Misc
+
+- Locked version of `urllib3` to `<2` as workaround for https://github.com/docker/docker-py/issues/3113
+- Locked version of `requests` to `<2.29`  as workaround for https://github.com/docker/docker-py/issues/3113
 
 ## Version 1.0.0
 
