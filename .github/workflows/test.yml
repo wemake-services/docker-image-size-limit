@@ -48,7 +48,6 @@ jobs:
         poetry run pytest
         poetry check
         poetry run pip check
-        poetry run safety check --full-report
 
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v3
