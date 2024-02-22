@@ -2,12 +2,24 @@
 
 We follow Semantic Version.
 
+## Version 1.1.0
+
+### Features
+
+- Drops `python3.8` support
+
+### Misc
+
+- Unlocked `urllib3`, `requests`, and `docker-py`
+
+
 ## Version 1.0.1
 
 ### Misc
 
 - Locked version of `urllib3` to `<2` as workaround for https://github.com/docker/docker-py/issues/3113
 - Locked version of `requests` to `<2.29`  as workaround for https://github.com/docker/docker-py/issues/3113
+
 
 ## Version 1.0.0
 
