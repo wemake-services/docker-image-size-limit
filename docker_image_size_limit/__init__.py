@@ -52,7 +52,7 @@ def check_image_size(
         than the actual image. We only care for values ``> 0``.
 
     """
-    image_size = client.images.get(image).attrs['Size']
+    image_size: int = client.images.get(image).attrs['Size']
 
     try:
         image_limit = int(limit)
