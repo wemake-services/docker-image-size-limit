@@ -1,7 +1,7 @@
 import subprocess
 
 
-def test_disl_exceeds_limit(docker_client, image_name):
+def test_disl_exceeds_limit(image_name: str) -> None:
     """Runs `disl` command with met limit."""
     process = subprocess.Popen(
         [
@@ -21,7 +21,7 @@ def test_disl_exceeds_limit(docker_client, image_name):
     assert image_name in output
 
 
-def test_disl_normal(docker_client, image_name):
+def test_disl_normal(image_name: str) -> None:
     """Runs `disl` command with unmet limit."""
     process = subprocess.Popen(
         [
