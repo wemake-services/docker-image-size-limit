@@ -42,7 +42,7 @@ jobs:
     - name: "Run checks for python ${{ matrix.python-version }}"
       run: |
         poetry run flake8 .
-        poetry run mypy docker_image_size_limit
+        poetry run mypy .
         # We need this specific image for tests:
         poetry run docker pull python:3.6.6-alpine
         poetry run pytest

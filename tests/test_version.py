@@ -1,7 +1,7 @@
 import subprocess
 
 
-def test_disl_version():
+def test_disl_version() -> None:
     """Runs `disl` command with `--version` option."""
     process = subprocess.Popen(
         [
