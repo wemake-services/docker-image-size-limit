@@ -2,6 +2,14 @@
 
 We follow Semantic Version.
 
+
+## Version 2.0.0
+
+### Features
+
+- Adds `--max-layers` flag to lint the maximum number of layers
+
+
 ## Version 1.1.0
 
 ### Features

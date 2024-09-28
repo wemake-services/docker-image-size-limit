@@ -1,5 +1,6 @@
 import docker
 import pytest
+from docker.models.images import Image
 
 
 @pytest.fixture(scope='session')
@@ -20,3 +21,12 @@ def _docker_pull_image(
 ) -> None:
     """Pulls docker image from Docker Hub."""
     docker_client.images.pull(image_name)
+
+
+@pytest.fixture
+def docker_image(
+    docker_client: docker.DockerClient,
+    image_name: str,
+) -> Image:
+    """Returns image object that is used in tests."""
+    return docker_client.images.get(image_name)
