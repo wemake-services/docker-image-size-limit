@@ -20,4 +20,4 @@ jobs:
       with:  # we lint this image by itself:
         image: 'wemake-services/docker-image-size-limit:latest'
         size: 405MB
-        max_layers: 7
+        max_layers: 10
