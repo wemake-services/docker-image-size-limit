@@ -11,6 +11,9 @@ concurrency:
   group: ${{ github.head_ref || github.run_id }}
   cancel-in-progress: true
 
+permissions:
+  contents: read
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -39,12 +42,15 @@ jobs:
         poetry run pip install -U pip
         poetry install
 
+    - name: Pull test deps
+      run: |
+        # We need this specific image for tests:
+        poetry run docker pull python:3.6.6-alpine
+
     - name: "Run checks for python ${{ matrix.python-version }}"
       run: |
         poetry run flake8 .
         poetry run mypy .
-        # We need this specific image for tests:
-        poetry run docker pull python:3.6.6-alpine
         poetry run pytest
         poetry check
         poetry run pip check

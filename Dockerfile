@@ -12,13 +12,13 @@
 # This image is also available on Dockerhub:
 # https://hub.docker.com/r/wemakeservices/docker-image-size-limit
 
-FROM python:3.9.6-alpine
+FROM python:3.12.6-alpine
 
-LABEL maintainer="sobolevn@wemake.services"
+LABEL maintainer="mail@sobolevn.me"
 LABEL vendor="wemake.services"
 
 # Our own tool:
-ENV DISL_VERSION='1.0.1'
+ENV DISL_VERSION='2.0.0'
 
 RUN apk add --no-cache bash docker
 RUN pip3 install "docker-image-size-limit==$DISL_VERSION"

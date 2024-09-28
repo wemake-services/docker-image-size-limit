@@ -5,7 +5,7 @@
 # See: https://help.github.com/en/articles/metadata-syntax-for-github-actions
 
 name: 'docker-image-size-limit'
-description: 'Runs docker-image-size-limit as a Github Action'
+description: 'Runs docker-image-size-limit as a GitHub Action'
 branding:
   icon: 'check'
   color: 'blue'
@@ -17,6 +17,10 @@ inputs:
   size:
     description: 'Human readable size as the hard limit'
     required: true
+  max_layers:
+    description: 'The maximum number of layers in the image'
+    required: false
+    default: -1
 outputs:
   size:
     description: 'The output of docker-image-size-limit run'
@@ -27,3 +31,4 @@ runs:
   args:
     - ${{ inputs.image }}
     - ${{ inputs.size }}
+    - ${{ inputs.layers }}

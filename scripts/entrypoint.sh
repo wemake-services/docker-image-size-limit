@@ -1,15 +1,19 @@
 #!/bin/bash
 
+# Default values:
+: "${INPUT_MAX_LAYERS:=-1}"
+
 # Diagnostic output:
 echo "Using image: $INPUT_IMAGE"
 echo "Size limit: $INPUT_SIZE"
+echo "Max layers: $INPUT_MAX_LAYERS"
 echo 'disl --version:'
 disl --version
 echo '================================='
 echo
 
 # Runs disl:
-output=$(disl "$INPUT_IMAGE" "$INPUT_SIZE")
+output=$(disl "$INPUT_IMAGE" "$INPUT_SIZE" --max-layers="$INPUT_MAX_LAYERS")
 status="$?"
 
 # Sets the output variable for Github Action API:

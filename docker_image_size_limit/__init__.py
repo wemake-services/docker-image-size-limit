@@ -1,9 +1,10 @@
 import argparse
 import os
 import sys
-from typing import NoReturn
+from typing import List, NoReturn, Tuple
 
 import docker
+from docker.models.images import Image
 from humanfriendly import format_size, parse_size
 
 from docker_image_size_limit.version import get_version
@@ -18,22 +19,48 @@ def main() -> NoReturn:
     """Main CLI entrypoint."""
     client = docker.from_env()
     arguments = _parse_args()
-    oversize = check_image_size(client, arguments.image, arguments.size)
+    extra_size, extra_layers = _check_image(
+        client,
+        image=arguments.image,
+        max_size=arguments.max_size,
+        max_layers=arguments.max_layers,
+    )
 
     exit_code = 0
-    if oversize > 0:
+    if extra_size > 0:
         print('{0} exceeds {1} limit by {2}'.format(  # noqa: WPS421
             arguments.image,
-            arguments.size,
-            format_size(oversize, binary=True),
+            arguments.max_size,
+            format_size(extra_size, binary=True),
+        ))
+        exit_code = 1
+    if extra_layers > 0:
+        print('{0} exceeds {1} maximum layers by {2}'.format(  # noqa: WPS421
+            arguments.image,
+            arguments.max_layers,
+            extra_layers,
         ))
         exit_code = 1
     sys.exit(exit_code)
 
 
-def check_image_size(
+def _check_image(
     client: docker.DockerClient,
     image: str,
+    max_size: str,
+    max_layers: int,
+) -> Tuple[int, int]:
+    image_info = client.images.get(image)
+    size_overflow = check_image_size(image_info, limit=max_size)
+    if max_layers > 0:
+        layers_overflow = check_image_layers(image_info, limit=max_layers)
+    else:
+        layers_overflow = 0
+    return size_overflow, layers_overflow
+
+
+def check_image_size(
+    image: Image,
     limit: str,
 ) -> int:
     """
@@ -42,8 +69,7 @@ def check_image_size(
     Compares it to the given size in bytes or in human readable format.
 
     Args:
-        client: docker client to work with images.
-        image: image name.
+        image: image object from docker.
         limit: human-readable size limit.
 
     Returns:
@@ -52,7 +78,7 @@ def check_image_size(
         than the actual image. We only care for values ``> 0``.
 
     """
-    image_size: int = client.images.get(image).attrs['Size']
+    image_size: int = image.attrs['Size']
 
     try:
         image_limit = int(limit)
@@ -60,6 +86,25 @@ def check_image_size(
         image_limit = parse_size(limit, binary=True)
 
     return image_size - image_limit
+
+
+def check_image_layers(
+    image: Image,
+    limit: int,
+) -> int:
+    """
+    Checks the number of layers in an image.
+
+    Args:
+        image: image object from docker.
+        limit: maximum number of layers.
+
+    Returns:
+        Tresshold overflow in number of layers.
+
+    """
+    layers: List[str] = image.attrs['RootFS']['Layers']
+    return len(layers) - limit
 
 
 def _parse_args() -> argparse.Namespace:
@@ -73,6 +118,12 @@ def _parse_args() -> argparse.Namespace:
         'image', type=str, help='Docker image name to be checked',
     )
     parser.add_argument(
-        'size', type=str, help='Human-readable size limit: 102 MB, 1GB',
+        'max_size', type=str, help='Human-readable size limit: 102 MB, 1GB',
+    )
+    parser.add_argument(
+        '--max-layers',
+        type=int,
+        help='Maximum number of image layers',
+        default=-1,
     )
     return parser.parse_args()

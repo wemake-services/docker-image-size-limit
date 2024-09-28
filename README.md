@@ -30,6 +30,19 @@ $ disl your-image-name:label 300MiB
 your-image-name:label exceeds 300MiB limit by 114.4 MiB
 ```
 
+Add `--max-layers` flag to also lint the maximum amount of layers possible
+in your image:
+
+```bash
+# If your image has 7 layers:
+$ disl your-image-name:label 300MiB --max-layers=5
+your-image-name:label exceeds 5 maximum layers by 2
+
+# If your image has 5 layers:
+$ disl your-image-name:label 300MiB --max-layers=5
+# ok!
+```
+
 
 ## Options
 
@@ -62,9 +75,9 @@ We also ship [PEP-561](https://www.python.org/dev/peps/pep-0561/)
 compatible type annotations with this library.
 
 
-## Github Action
+## GitHub Action
 
-You can also use this check as a [Gihub Action](https://github.com/marketplace/actions/docker-image-size-limit):
+You can also use this check as a [GitHub Action](https://github.com/marketplace/actions/docker-image-size-limit):
 
 ```yaml
 - uses: wemake-services/docker-image-size-limit@master

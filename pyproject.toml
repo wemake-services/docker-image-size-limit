@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "docker-image-size-limit"
-version = "1.1.0"
+version = "2.0.0"
 description = ""
 license = "MIT"
 authors = [
@@ -47,7 +47,7 @@ pytest-randomly = "^3.12"
 pytest-timeout = "^2.3"
 pytest = "^8.1"
 
-mypy = "^1.10"
+mypy = "^1.11"
 types-humanfriendly = "^10.0"
 types-docker = "^7.1"
 
