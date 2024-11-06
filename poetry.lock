@@ -1629,13 +1629,13 @@ urllib3 = ">=2"
 
 [[package]]
 name = "types-humanfriendly"
-version = "10.0.1.11"
+version = "10.0.1.20241105"
 description = "Typing stubs for humanfriendly"
 optional = false
-python-versions = ">=3.7"
+python-versions = ">=3.8"
 files = [
-    {file = "types-humanfriendly-10.0.1.11.tar.gz", hash = "sha256:c87b2eb8ec2ab1ae51cb3cc2c0efee31622a6711b2a7627d8109e22b4cfd4366"},
-    {file = "types_humanfriendly-10.0.1.11-py3-none-any.whl", hash = "sha256:c0ca654b16ff36ed4c059152085a76c9909272f5ea6ac03cdb7e59b5dcd392c7"},
+    {file = "types-humanfriendly-10.0.1.20241105.tar.gz", hash = "sha256:9fd55a80481f3def1a1fa1f057e765f578bc3dde2d9c7034ccf4c6ca9177e8c1"},
+    {file = "types_humanfriendly-10.0.1.20241105-py3-none-any.whl", hash = "sha256:c2cab19b77c7a81e4005a3512c7f352310406d6929f300487c423e4df5a3ec3d"},
 ]
 
 [[package]]
