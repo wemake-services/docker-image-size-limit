@@ -2,18 +2,33 @@
 
 # Default values:
 : "${INPUT_MAX_LAYERS:=-1}"
+: "${INPUT_SHOW_CURRENT_SIZE:=false}"
+: "${INPUT_EXIT_ZERO:=false}"
 
 # Diagnostic output:
 echo "Using image: $INPUT_IMAGE"
 echo "Size limit: $INPUT_SIZE"
 echo "Max layers: $INPUT_MAX_LAYERS"
+echo "Show Current Size: $INPUT_SHOW_CURRENT_SIZE"
+echo "Exit Zero: $INPUT_EXIT_ZERO"
 echo 'disl --version:'
 disl --version
 echo '================================='
 echo
 
+SHOW_CURRENT_SIZE_FLAG=""
+if [ "$INPUT_SHOW_CURRENT_SIZE" = "true" ]; then
+  SHOW_CURRENT_SIZE_FLAG="--current-size"
+fi
+
+EXIT_ZERO_FLAG=""
+if [ "$INPUT_EXIT_ZERO" = "true" ]; then
+  EXIT_ZERO_FLAG="--exit-zero"
+fi
+
+
 # Runs disl:
-output=$(disl "$INPUT_IMAGE" "$INPUT_SIZE" --max-layers="$INPUT_MAX_LAYERS")
+output=$(disl "$INPUT_IMAGE" "$INPUT_SIZE" --max-layers="$INPUT_MAX_LAYERS" "$SHOW_CURRENT_SIZE_FLAG" "$EXIT_ZERO_FLAG")
 status="$?"
 
 # Sets the output variable for Github Action API:
