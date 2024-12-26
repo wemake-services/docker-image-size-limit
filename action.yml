@@ -21,6 +21,14 @@ inputs:
     description: 'The maximum number of layers in the image'
     required: false
     default: -1
+  show_current_size:
+    description: 'Show the current size of the image'
+    required: false
+    default: 'false'
+  exit_zero:
+    description: 'Do not fail the action even if docker image size/layers exceed size and max_layers'
+    required: false
+    default: 'false'
 outputs:
   size:
     description: 'The output of docker-image-size-limit run'
@@ -32,3 +40,5 @@ runs:
     - ${{ inputs.image }}
     - ${{ inputs.size }}
     - ${{ inputs.layers }}
+    - ${{ inputs.show_current_size }}
+    - ${{ inputs.exit_zero }}
