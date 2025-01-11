@@ -1,8 +1,8 @@
 # This is a definition file for a Github Action.
-# See: https://help.github.com/en/articles/creating-a-docker-container-action
+# See: https://docs.github.com/en/actions/sharing-automations/creating-actions/creating-a-docker-container-action
 
 # We also define metadata here:
-# See: https://help.github.com/en/articles/metadata-syntax-for-github-actions
+# See: https://docs.github.com/en/actions/sharing-automations/creating-actions/metadata-syntax-for-github-actions
 
 name: 'docker-image-size-limit'
 description: 'Runs docker-image-size-limit as a GitHub Action'
@@ -21,6 +21,14 @@ inputs:
     description: 'The maximum number of layers in the image'
     required: false
     default: -1
+  show_current_size:
+    description: 'Show the current size of the image'
+    required: false
+    default: 'false'
+  exit_zero:
+    description: 'Do not fail the action even if docker image size/layers exceed size and max_layers'
+    required: false
+    default: 'false'
 outputs:
   size:
     description: 'The output of docker-image-size-limit run'
@@ -32,3 +40,5 @@ runs:
     - ${{ inputs.image }}
     - ${{ inputs.size }}
     - ${{ inputs.layers }}
+    - ${{ inputs.show_current_size }}
+    - ${{ inputs.exit_zero }}

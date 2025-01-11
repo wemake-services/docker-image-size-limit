@@ -43,6 +43,42 @@ $ disl your-image-name:label 300MiB --max-layers=5
 # ok!
 ```
 
+Add `--current-size` flag to show the current size your image:
+
+```bash
+$ disl your-image-name:label 300MiB --current-size
+your-image-name:label size is 414.4 MiB
+your-image-name:label exceeds 300MiB limit by 114.4 MiB
+```
+
+
+Add `--exit-zero` flag to force the exit code to be 0 even if there are errors:
+
+```bash
+$ disl your-image-name:label 300MiB --exit-zero
+your-image-name:label exceeds 300MiB limit by 114.4 MiB
+
+$ echo $?
+0
+```
+
+You can combine all flags together:
+
+```bash
+$ disl your-image-name:label 300MiB --max-layers=5 --current-size --exit-zero
+your-image-name:label size is 414.4 MiB
+your-image-name:label exceeds 300MiB limit by 114.4 MiB
+your-image-name:label exceeds 5 maximum layers by 2
+```
+
+Run `disl` as a module:
+
+```bash
+$ python -m docker_image_size_limit your-image-name:label 300MiB
+your-image-name:label exceeds 300MiB limit by 114.4 MiB
+```
+
+
 
 ## Options
 
@@ -84,6 +120,10 @@ You can also use this check as a [GitHub Action](https://github.com/marketplace/
   with:
     image: "$YOUR_IMAGE_NAME"
     size: "$YOUR_SIZE_LIMIT"
+    # optional fields:
+    max_layers: 5
+    show_current_size: false
+    exit_zero: false
 ```
 
 Here's [an example](https://github.com/wemake-services/docker-image-size-limit/actions?query=workflow%3Adisl).
@@ -105,6 +145,9 @@ Then you can use it like so:
 docker run -v /var/run/docker.sock:/var/run/docker.sock --rm \
   -e INPUT_IMAGE="$YOUR_IMAGE_NAME" \
   -e INPUT_SIZE="$YOUR_SIZE_LIMIT" \
+  -e INPUT_MAX_LAYERS="$YOUR_MAX_LAYERS" \
+  -e INPUT_SHOW_CURRENT_SIZE="true" \
+  -e INPUT_EXIT_ZERO="true" \
   wemakeservices/docker-image-size-limit
 ```
 

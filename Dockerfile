@@ -18,7 +18,7 @@ LABEL maintainer="mail@sobolevn.me"
 LABEL vendor="wemake.services"
 
 # Our own tool:
-ENV DISL_VERSION='2.0.0'
+ENV DISL_VERSION='2.1.0'
 
 RUN apk add --no-cache bash docker
 RUN pip3 install "docker-image-size-limit==$DISL_VERSION"
