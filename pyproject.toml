@@ -52,7 +52,7 @@ types-humanfriendly = "^10.0"
 types-docker = "^7.1"
 
 wemake-python-styleguide = "^0.19"
-flake8-pytest-style = "^2.0"
+flake8-pytest-style = "^2.1"
 nitpick = "^0.35"
 
 
