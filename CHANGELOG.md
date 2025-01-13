@@ -2,13 +2,17 @@
 
 We follow Semantic Version.
 
+
 ## Version 2.1.0
 
 ### Features
 
-- Adds `--current-size` flag to show the current size of the docker image.
-- Adds `--exit-zero` flag to force the exit code to be 0 even if there are errors.
-- Adds `__main__.py` entrypoint to be able to run it via `python -m docker_image_size_limit`
+- Adds `--current-size` flag to show the current size of the docker image
+- Adds `--exit-zero` flag to force the exit code
+  to be 0 even if there are errors
+- Adds `__main__.py` entrypoint to be able to run
+  it via `python -m docker_image_size_limit`
+
 
 ## Version 2.0.0
 
