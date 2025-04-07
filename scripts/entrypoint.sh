@@ -36,7 +36,7 @@ fi
 
 
 # Runs disl:
-output=$(disl "$INPUT_IMAGE" "$INPUT_SIZE" --max-layers="$INPUT_MAX_LAYERS" "$SHOW_CURRENT_SIZE_FLAG" "$EXIT_ZERO_FLAG")
+output=$(disl "$INPUT_IMAGE" "$INPUT_SIZE" --max-layers="$INPUT_MAX_LAYERS" $SHOW_CURRENT_SIZE_FLAG $EXIT_ZERO_FLAG)
 status="$?"
 
 # Sets the output variable for Github Action API:
