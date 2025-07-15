@@ -47,7 +47,7 @@ pytest-randomly = "^3.16"
 pytest-timeout = "^2.4"
 pytest = "^8.4"
 
-mypy = "^1.16"
+mypy = "^1.17"
 types-humanfriendly = "^10.0"
 types-docker = "^7.1"
 
