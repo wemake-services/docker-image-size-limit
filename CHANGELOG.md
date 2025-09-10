@@ -3,6 +3,13 @@
 We follow Semantic Version.
 
 
+## Version 2.2.0
+
+### Features
+
+- Drops `python3.9` support
+
+
 ## Version 2.1.0
 
 ### Features
