@@ -1,7 +1,7 @@
 import argparse
-import os
+import pathlib
 import sys
-from typing import List, NoReturn, Tuple
+from typing import NoReturn
 
 import docker
 from docker.models.images import Image
@@ -11,7 +11,7 @@ from docker_image_size_limit.version import get_version
 
 #: We use this variable to show version spec.
 _version = get_version(
-    os.path.basename(os.path.dirname(__file__)),
+    pathlib.Path(pathlib.Path(__file__).parent).name,
 )
 
 
@@ -26,25 +26,22 @@ def main(prog_name: str = 'disl') -> NoReturn:  # noqa: WPS210
         max_layers=arguments.max_layers,
     )
     if arguments.current_size:
-        print('{0} current size is {1}'.format(  # noqa: WPS421
-            arguments.image,
-            format_size(image_current_size, binary=True),
-        ))
+        formatted = format_size(image_current_size, binary=True)
+        print(f'{arguments.image} current size is {formatted}')  # noqa: WPS421
 
     exit_code = 0
     if extra_size > 0:
-        print('{0} exceeds {1} limit by {2}'.format(  # noqa: WPS421
-            arguments.image,
-            arguments.max_size,
-            format_size(extra_size, binary=True),
-        ))
+        formatted = format_size(extra_size, binary=True)
+        print(  # noqa: WPS421
+            f'{arguments.image} exceeds {arguments.max_size} limit '
+            f'by {formatted}'
+        )
         exit_code = 1
     if extra_layers > 0:
-        print('{0} exceeds {1} maximum layers by {2}'.format(  # noqa: WPS421
-            arguments.image,
-            arguments.max_layers,
-            extra_layers,
-        ))
+        print(  # noqa: WPS421
+            f'{arguments.image} exceeds {arguments.max_layers} maximum layers '
+            f'by {extra_layers}'
+        )
         exit_code = 1
     if arguments.exit_zero:
         exit_code = 0
@@ -56,7 +53,7 @@ def _check_image(
     image: str,
     max_size: str,
     max_layers: int,
-) -> Tuple[int, int, int]:
+) -> tuple[int, int, int]:
     image_info = client.images.get(image)
     image_current_size: int = image_info.attrs['Size']
     size_overflow = check_image_size(image_info, limit=max_size)
@@ -111,7 +108,7 @@ def check_image_layers(
         Tresshold overflow in number of layers.
 
     """
-    layers: List[str] = image.attrs['RootFS']['Layers']
+    layers: list[str] = image.attrs['RootFS']['Layers']
     return len(layers) - limit
 
 
@@ -121,13 +118,19 @@ def _parse_args(prog_name: str) -> argparse.Namespace:
         prog=prog_name,
     )
     parser.add_argument(
-        '--version', action='version', version=_version,
+        '--version',
+        action='version',
+        version=_version,
     )
     parser.add_argument(
-        'image', type=str, help='Docker image name to be checked',
+        'image',
+        type=str,
+        help='Docker image name to be checked',
     )
     parser.add_argument(
-        'max_size', type=str, help='Human-readable size limit: 102 MB, 1GB',
+        'max_size',
+        type=str,
+        help='Human-readable size limit: 102 MB, 1GB',
     )
     parser.add_argument(
         '--max-layers',
@@ -145,7 +148,10 @@ def _parse_args(prog_name: str) -> argparse.Namespace:
     parser.add_argument(
         '--exit-zero',
         action='store_true',
-        help='Exit with 0 even if docker image size/layers exceed max_size and max-layers',  # noqa: E501
+        help=(
+            'Exit with 0 even if docker image size/layers '
+            'exceed max_size and max-layers'
+        ),
         default=False,
         dest='exit_zero',
     )

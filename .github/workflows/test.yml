@@ -20,7 +20,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python-version: ['3.9', '3.10', '3.11', '3.12', '3.13']
+        python-version: ['3.10', '3.11', '3.12', '3.13']
 
     steps:
     - uses: actions/checkout@v5
@@ -53,6 +53,7 @@ jobs:
         poetry run mypy .
         poetry run pytest
         poetry run pip check
+        poetry check
 
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v5

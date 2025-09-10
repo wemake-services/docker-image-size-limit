@@ -1,6 +1,6 @@
+import pathlib
 import subprocess
 import sys
-from os.path import basename
 
 
 def test_disl_exceeds_limit(image_name: str) -> None:
@@ -107,10 +107,10 @@ def test_disl_exit_zero(image_name: str) -> None:
 
 def test_docker_image_size_limit_as_module(image_name: str) -> None:
     """Runs `disl` command with --exit-zero flag."""
-    interpreter_binary_name = basename(sys.executable)
+    interpreter_binary_name = pathlib.Path(sys.executable).name
     process = subprocess.Popen(
         [
-            '{0}'.format(interpreter_binary_name),
+            f'{interpreter_binary_name}',
             '-m',
             'docker_image_size_limit',
             image_name,
@@ -130,12 +130,12 @@ def test_docker_image_size_limit_as_module(image_name: str) -> None:
     assert image_name in output
 
 
-def test_docker_image_size_limit_as_module_help_flag(image_name: str) -> None:  # noqa: WPS118,E501
+def test_docker_image_size_limit_as_module_help_flag(image_name: str) -> None:  # noqa: WPS118
     """Runs `disl` command via it python module."""
-    interpreter_binary_name = basename(sys.executable)
+    interpreter_binary_name = pathlib.Path(sys.executable).name
     process = subprocess.Popen(
         [
-            '{0}'.format(interpreter_binary_name),
+            f'{interpreter_binary_name}',
             '-m',
             'docker_image_size_limit',
             '--help',
