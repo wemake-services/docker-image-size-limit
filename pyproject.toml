@@ -56,7 +56,7 @@ mypy = "^1.19"
 types-humanfriendly = "^10.0"
 types-docker = "^7.1"
 
-wemake-python-styleguide = "^1.5"
+wemake-python-styleguide = "^1.6"
 ruff = "^0.15"
 
 
