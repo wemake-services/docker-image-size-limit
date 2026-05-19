@@ -1063,14 +1063,14 @@ files = [
 
 [[package]]
 name = "types-docker"
-version = "7.1.0.20260512"
+version = "7.1.0.20260518"
 description = "Typing stubs for docker"
 optional = false
 python-versions = ">=3.10"
 groups = ["dev"]
 files = [
-    {file = "types_docker-7.1.0.20260512-py3-none-any.whl", hash = "sha256:cde75a5a299c504f13dfb681c3dffdb14501c2d261ebff9c9bb5cf0d89971506"},
-    {file = "types_docker-7.1.0.20260512.tar.gz", hash = "sha256:d05ce1162267f769b26cbc8f38d7e9712e86816a37f06d4eab16279dbcf18456"},
+    {file = "types_docker-7.1.0.20260518-py3-none-any.whl", hash = "sha256:59893937816bfe40eb2915c84b31c3131107537500287c47d4a10dd7a9d59deb"},
+    {file = "types_docker-7.1.0.20260518.tar.gz", hash = "sha256:d194c4b82a4110fc58c84af05a5d9de6d3e54f94357ff745d01b5dca12c8eaaa"},
 ]
 
 [package.dependencies]
