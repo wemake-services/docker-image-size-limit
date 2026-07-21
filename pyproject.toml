@@ -54,7 +54,7 @@ pytest = "^9.1"
 
 mypy = "^2.3"
 types-humanfriendly = "^10.0"
-types-docker = "^7.1"
+types-docker = "^7.2"
 
 wemake-python-styleguide = "^1.6"
 ruff = "^0.15"
