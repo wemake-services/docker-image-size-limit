@@ -57,7 +57,7 @@ types-humanfriendly = "^10.0"
 types-docker = "^7.2"
 
 wemake-python-styleguide = "^1.6"
-ruff = "^0.15"
+ruff = "^0.16"
 
 
 [tool.ruff]
