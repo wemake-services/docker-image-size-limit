@@ -9,11 +9,10 @@ from humanfriendly import format_size, parse_size
 
 from docker_image_size_limit.version import get_version
 
-#: We use this variable to show version spec.
 _version = get_version(
     pathlib.Path(pathlib.Path(__file__).parent).name,
 )
-
+"""We use this variable to show version spec."""
 
 def main(prog_name: str = 'disl') -> NoReturn:  # noqa: WPS210
     """Main CLI entrypoint."""
