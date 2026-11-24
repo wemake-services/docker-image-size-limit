@@ -2,6 +2,12 @@
 
 We follow Semantic Version.
 
+## WIP
+
+### Features
+
+- Explicitly support `python3.14`, and `python3.15`
+
 
 ## Version 2.2.0
 
